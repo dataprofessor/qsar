@@ -100,4 +100,4 @@ if st.session_state.smiles_input != '':
 # Read in saved classification model
 if st.session_state.smiles_input != '':
   model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
-  st.write(model)
+  st.write(model.feature_importances_)
