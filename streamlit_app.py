@@ -4,7 +4,7 @@ from padelpy import padeldescriptor
 
 st.title('💊 Bioactivity prediction app')
 
-molecule = pd.read_csv('molecule.smi')
+molecule = pd.read_csv('data/molecule.smi')
 ic50 = pd.read_csv('data/hcv_ns5b_ic50_nm.csv')
 st.write(molecule)
 st.write(ic50)
