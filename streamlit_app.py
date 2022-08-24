@@ -54,13 +54,10 @@ if st.session_state.smiles_input != '':
   m3 = Chem.MolToXYZBlock(m2)
   with st.expander('See Mol file'):
     st.code(m3)
+  Chem.MolToXYZFile(m2, 'molecule.xyz')
 
-f2 = open('molecule.xyz', 'w')
-st.write(f2)
-f2.close()
-
-f3 = open('molecule.xyz', 'r')
-molecule_xyz = f3.read()
+f2 = open('molecule.xyz', 'r')
+molecule_xyz = f2.read()
 speck_plot(molecule_xyz, wbox_height='500px', wbox_width='500px')
 
 
