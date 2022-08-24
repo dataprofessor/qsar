@@ -19,7 +19,7 @@ st.title('💊 Bioactivity prediction app')
 
 
 # Input SMILES
-st.sidebar.subheader('Input SMILES')
+st.subheader('Input SMILES')
 
 def insert_example_smiles():
     st.session_state.example_input = 'CC(=O)OC1=CC=CC=C1C(=O)O'
