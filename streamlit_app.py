@@ -33,7 +33,7 @@ with st.expander('About this app'):
     ''')
 
 # Input SMILES
-st.sidebar.subheader('Input SMILES')
+st.sidebar.subheader('Input molecule')
 
 def insert_example_smiles():
     st.session_state.smiles_input = 'CC(=O)OC1=CC=CC=C1C(=O)O'
