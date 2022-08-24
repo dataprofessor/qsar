@@ -4,3 +4,4 @@ scikit-learn
 padelpy
 stmol
 py3Dmol
+rdkit-pypi
