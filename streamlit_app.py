@@ -45,7 +45,11 @@ f.close()
 
 # Show molecule
 m = Chem.MolFromSmiles(smiles_txt)
-st.write(m)
+m2 = Chem.AddHs(m)
+AllChem.EmbedMolecule(m2,randomSeed=0xf00d)
+m3 = Chem.MolToMolBlock(m2)
+st.write(m3)
+
 #f = open(example_xyz,"r")
 #    example_xyz = f.read()
 
