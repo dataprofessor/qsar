@@ -19,7 +19,7 @@ st.title('💊 Bioactivity prediction app')
 
 
 # Input SMILES
-st.subheader('Input SMILES')
+st.sidebar.subheader('Input SMILES')
 
 def insert_example_smiles():
     st.session_state.example_input = 'CC(=O)OC1=CC=CC=C1C(=O)O'
@@ -31,7 +31,7 @@ st.sidebar.button('Example input', on_click=insert_example_smiles)
 st.sidebar.button('Clear input', on_click=clear_smiles)
 
 
-st.sidebar.subheader('Status')
+st.subheader('Status')
 
 if st.session_state.example_input == '':
   st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
