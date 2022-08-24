@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import pandas as pd
+from rdkit import Chem
 from padelpy import padeldescriptor
 
 st.set_page_config(
@@ -43,7 +44,8 @@ f.write(f'{smiles_txt}\tmol_001')
 f.close()
 
 # Show molecule
-
+m = Chem.MolFromSmiles(smiles_txt)
+st.write(m)
 #f = open(example_xyz,"r")
 #    example_xyz = f.read()
 
