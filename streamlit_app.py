@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
+from stmol import speck_plot
 from padelpy import padeldescriptor
 
 st.set_page_config(
@@ -33,8 +34,6 @@ st.sidebar.button('Example input', on_click=insert_example_smiles)
 st.sidebar.button('Clear input', on_click=clear_smiles)
 
 
-
-
 if st.session_state.smiles_input == '':
   st.subheader('Welcome to the app!')
   st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
@@ -56,8 +55,13 @@ if st.session_state.smiles_input != '':
   with st.expander('See Mol file'):
     st.code(m3)
 
-#f = open(example_xyz,"r")
-#    example_xyz = f.read()
+f2 = open('molecule.mol', 'w')
+f2.write(m3)
+f2.close()
+
+f3 = open(example_xyz, 'r')
+molecule_mol = f.read()
+res = speck_plot(molecule_mol, wbox_height='500px', wbox_width='500px')
 
 
 # Compute PADEL descriptors
