@@ -6,7 +6,8 @@ from padelpy import padeldescriptor
 if 'example_input' not in st.session_state:
   st.session_state.example_input = ''
 
-os.remove('molecule.smi') 
+if os.path.isfile('molecule.smi'):
+  os.remove('molecule.smi') 
   
 st.title('💊 Bioactivity prediction app')
 
