@@ -50,7 +50,7 @@ if st.session_state.smiles_input == '':
   st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
 else:
   st.subheader('Input molecule:')
-  st.info(smiles_txt, icon='💊')
+  st.info(smiles_txt, icon='⚛️')
 
 f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\tmol_001')
