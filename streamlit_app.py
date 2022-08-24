@@ -37,5 +37,5 @@ padeldescriptor(mol_dir='data/molecule.smi',
                 log=True,
                 fingerprints=True)
 
-descriptors = pd.read_csv('descriptors.csv')
-st.write(descriptors)
+#descriptors = pd.read_csv('descriptors.csv')
+#st.write(descriptors)
