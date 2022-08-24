@@ -9,7 +9,7 @@ st.set_page_config(
   layout='wide',
   initial_sidebar_state='collapsed')
 
-if 'example_input' not in st.session_state:
+if 'smiles_input' not in st.session_state:
   st.session_state.smiles_input = ''
 
 if os.path.isfile('molecule.smi'):
