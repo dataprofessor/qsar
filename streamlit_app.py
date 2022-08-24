@@ -58,7 +58,7 @@ if st.session_state.smiles_input != '':
 
 f2 = open('molecule.xyz', 'r')
 molecule_xyz = f2.read()
-speck_plot(molecule_xyz, wbox_width='400px')
+speck_plot(molecule_xyz, wbox_width='600px')
 
 
 # Compute PADEL descriptors
