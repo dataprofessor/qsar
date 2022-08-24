@@ -59,7 +59,7 @@ f2 = open('molecule.mol', 'w')
 st.write(f2)
 f2.close()
 
-f3 = open(example_xyz, 'r')
+f3 = open('molecule.mol', 'r')
 molecule_mol = f3.read()
 speck_plot(molecule_mol, wbox_height='500px', wbox_width='500px')
 
