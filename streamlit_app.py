@@ -14,9 +14,6 @@ st.info(smiles_txt)
 
 fingerprint = 'Substructure'
 
-fingerprint_output_file = ''.join([fingerprint,'.csv']) #Substructure.csv
-fingerprint_descriptortypes = fp[fingerprint]
-
 padeldescriptor(mol_dir='molecule.smi', 
                 d_file='descriptors.csv',
                 descriptortypes='data/PubchemFingerprinter.xml', 
