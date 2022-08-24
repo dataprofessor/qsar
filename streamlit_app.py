@@ -1,10 +1,13 @@
 import streamlit as st
+import os
 import pandas as pd
 from padelpy import padeldescriptor
 
 if 'example_input' not in st.session_state:
   st.session_state.example_input = ''
 
+os.remove('molecule.smi') 
+  
 st.title('💊 Bioactivity prediction app')
 
 # Input SMILES
