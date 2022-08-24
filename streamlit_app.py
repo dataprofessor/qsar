@@ -22,7 +22,7 @@ button_col2.button('Clear input', on_click=clear_smiles)
 st.info(smiles_txt)
 
 f = open('molecule.smi', 'w')
-f.write(f'{Esmiles_txt}\t')
+f.write(f'{smiles_txt}\t')
 
 
 # Compute PADEL descriptors
