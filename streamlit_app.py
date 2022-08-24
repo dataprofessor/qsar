@@ -19,7 +19,7 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.title('💊 BioAct')
+st.title('💊 BioAct: A BioActivity prediction app')
 
 with st.expander('About this app'):
   st.write('''
