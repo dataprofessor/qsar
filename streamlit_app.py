@@ -30,16 +30,17 @@ st.info(smiles_txt)
 #f.close()
 
 # Compute PADEL descriptors
-padeldescriptor(mol_dir='data/molecule.smi', 
-                d_file='data/descriptors.csv',
-                descriptortypes='data/PubchemFingerprinter.xml', 
-                detectaromaticity=True,
-                standardizenitro=True,
-                standardizetautomers=True,
-                threads=2,
-                removesalt=True,
-                log=True,
-                fingerprints=True)
+if os.path.isfile('molecule.smi'):
+  padeldescriptor(mol_dir='data/molecule.smi', 
+                  d_file='data/descriptors.csv',
+                  descriptortypes='data/PubchemFingerprinter.xml', 
+                  detectaromaticity=True,
+                  standardizenitro=True,
+                  standardizetautomers=True,
+                  threads=2,
+                  removesalt=True,
+                  log=True,
+                  fingerprints=True)
 
 #descriptors = pd.read_csv('descriptors.csv')
 #st.write(descriptors)
