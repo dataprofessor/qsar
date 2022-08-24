@@ -41,6 +41,8 @@ f.close()
 
 
 # Compute PADEL descriptors
+st.subheader('🔢 Descriptors')
+
 if os.path.isfile('molecule.smi'):
   padeldescriptor(mol_dir='molecule.smi', 
                   d_file='descriptors.csv',
@@ -53,8 +55,6 @@ if os.path.isfile('molecule.smi'):
                   log=True,
                   fingerprints=True)
 
-# Display PADEL descriptors
-st.subheader('🔢 Descriptors')
 descriptors = pd.read_csv('descriptors.csv')
 descriptors.drop('Name', axis=1, inplace=True)
 st.write(descriptors)
