@@ -25,14 +25,14 @@ button_col2.button('Clear input', on_click=clear_smiles)
 
 st.info(smiles_txt)
 
-#f = open('molecule.smi', 'w')
-#f.write(f'{smiles_txt}\t')
-#f.close()
+f = open('molecule.smi', 'w')
+f.write(f'{smiles_txt}\tmol_001')
+f.close()
 
 # Compute PADEL descriptors
 if os.path.isfile('molecule.smi'):
-  padeldescriptor(mol_dir='data/molecule.smi', 
-                  d_file='data/descriptors.csv',
+  padeldescriptor(mol_dir='molecule.smi', 
+                  d_file='descriptors.csv',
                   descriptortypes='data/PubchemFingerprinter.xml', 
                   detectaromaticity=True,
                   standardizenitro=True,
@@ -42,5 +42,5 @@ if os.path.isfile('molecule.smi'):
                   log=True,
                   fingerprints=True)
 
-#descriptors = pd.read_csv('descriptors.csv')
-#st.write(descriptors)
+descriptors = pd.read_csv('descriptors.csv')
+st.write(descriptors)
