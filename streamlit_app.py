@@ -31,7 +31,7 @@ st.sidebar.button('Example input', on_click=insert_example_smiles)
 st.sidebar.button('Clear input', on_click=clear_smiles)
 
 if st.session_state.example_input == '':
-  st.info('Enter SMILES notation to proceed ☝️', icon='ℹ️')
+  st.info('👈 Enter SMILES notation in the sidebar to proceed', icon='ℹ️')
 else:
   st.info(smiles_txt, icon='ℹ️')
 
