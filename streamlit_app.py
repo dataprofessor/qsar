@@ -11,6 +11,7 @@ if os.path.isfile('molecule.smi'):
   
 st.title('💊 Bioactivity prediction app')
 
+
 # Input SMILES
 def insert_example_smiles():
     st.session_state.example_input = 'CC(=O)OC1=CC=CC=C1C(=O)O'
@@ -23,11 +24,15 @@ button_col1, button_col2, button_col3, button_col4 = st.columns(4)
 button_col1.button('Insert example input', on_click=insert_example_smiles)
 button_col2.button('Clear input', on_click=clear_smiles)
 
-st.info(smiles_txt)
+if st.session_state.example_input is None:
+  st.info('Enter SMILES notation to proceed ☝️')
+else:
+  st.info(smiles_txt)
 
 f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\tmol_001')
 f.close()
+
 
 # Compute PADEL descriptors
 if os.path.isfile('molecule.smi'):
