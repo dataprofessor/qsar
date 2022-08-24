@@ -94,3 +94,9 @@ if st.session_state.smiles_input != '':
   descriptors = pd.read_csv('descriptors.csv')
   descriptors.drop('Name', axis=1, inplace=True)
   st.write(descriptors)
+  
+ 
+# Read in saved classification model
+if st.session_state.smiles_input != '':
+  model = pickle.load(open('oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
+  st.write(model)
