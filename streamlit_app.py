@@ -14,8 +14,8 @@ st.info(smiles_txt)
 
 fingerprint = 'Substructure'
 
-padeldescriptor(mol_dir='molecule.smi', 
-                d_file='descriptors.csv',
+padeldescriptor(mol_dir='data/molecule.smi', 
+                d_file='data/descriptors.csv',
                 descriptortypes='data/PubchemFingerprinter.xml', 
                 detectaromaticity=True,
                 standardizenitro=True,
