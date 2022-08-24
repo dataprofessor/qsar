@@ -56,6 +56,7 @@ if st.session_state.smiles_input != '':
     st.code(m3)
 
 f2 = open('molecule.mol', 'w')
+st.write(f2)
 f2.write(m3)
 f2.close()
 
