@@ -23,7 +23,7 @@ st.info(smiles_txt)
 
 f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\t')
-
+f.close()
 
 # Compute PADEL descriptors
 padeldescriptor(mol_dir='data/molecule.smi', 
