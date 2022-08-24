@@ -27,9 +27,9 @@ def clear_smiles():
 button_col1, button_col2, button_col3 = st.columns((4,1,1))
 
 smiles_txt = button_col1.text_input('Enter SMILES notation', st.session_state.example_input)
-button_col2.empty()
+button_col2.write('')
 button_col2.button('Example input', on_click=insert_example_smiles)
-button_col3.empty()
+button_col3.write('')
 button_col3.button('Clear input', on_click=clear_smiles)
 
 if st.session_state.example_input == '':
