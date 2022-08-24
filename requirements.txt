@@ -3,3 +3,4 @@ pandas
 scikit-learn
 padelpy
 stmol
+py3Dmol
