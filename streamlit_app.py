@@ -3,6 +3,12 @@ import os
 import pandas as pd
 from padelpy import padeldescriptor
 
+st.set_page_config(
+  page_title='Bioactivity prediction app',
+  page_icon='💊',
+  layout='wide',
+  initial_sidebar_state='collapsed')
+
 if 'example_input' not in st.session_state:
   st.session_state.example_input = ''
 
