@@ -64,7 +64,7 @@ if st.session_state.smiles_input != '':
     with st.expander('Show molecular structure via speck_plot'):
       f2 = open('molecule.xyz', 'r')
       molecule_xyz = f2.read()
-      speck_plot(molecule_xyz, wbox_width='100%')
+      speck_plot(molecule_xyz, wbox_width='200px')
 
 
 # Compute PADEL descriptors
