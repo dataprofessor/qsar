@@ -19,13 +19,14 @@ st.title('💊 Bioactivity prediction app')
 
 
 # Input SMILES
+st.sidebar.subheader('Input SMILES')
+
 def insert_example_smiles():
     st.session_state.example_input = 'CC(=O)OC1=CC=CC=C1C(=O)O'
 def clear_smiles():
     st.session_state.example_input = ''
 
 smiles_txt = st.sidebar.text_input('Enter SMILES notation', st.session_state.example_input)
-
 st.sidebar.button('Example input', on_click=insert_example_smiles)
 st.sidebar.button('Clear input', on_click=clear_smiles)
 
@@ -52,6 +53,7 @@ if os.path.isfile('molecule.smi'):
                   log=True,
                   fingerprints=True)
 
+# Display PADEL descriptors
 st.subheader('🔢 Descriptors')
 descriptors = pd.read_csv('descriptors.csv')
 descriptors.drop('Name', axis=1, inplace=True)
