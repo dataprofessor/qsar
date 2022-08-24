@@ -24,7 +24,7 @@ def insert_example_smiles():
 def clear_smiles():
     st.session_state.example_input = ''
 
-button_col1, button_col2, button_col3 = st.columns((4,1,1))
+button_col1, button_col2, button_col3 = st.columns((4,2,2))
 
 smiles_txt = button_col1.text_input('Enter SMILES notation', st.session_state.example_input)
 button_col2.button('Insert example input', on_click=insert_example_smiles)
