@@ -24,13 +24,11 @@ def insert_example_smiles():
 def clear_smiles():
     st.session_state.example_input = ''
 
-button_col1, button_col2, button_col3 = st.columns((4,1,1))
+button_col1, button_col2, button_col3 = st.columns((1,1,3))
 
-smiles_txt = button_col1.text_input('Enter SMILES notation', st.session_state.example_input)
-button_col2.write('\n\n')
-button_col2.button('Example input', on_click=insert_example_smiles)
-button_col3.write('\n\n')
-button_col3.button('Clear input', on_click=clear_smiles)
+smiles_txt = st.text_input('Enter SMILES notation', st.session_state.example_input)
+button_col1.button('Example input', on_click=insert_example_smiles)
+button_col2.button('Clear input', on_click=clear_smiles)
 
 if st.session_state.example_input == '':
   st.info('Enter SMILES notation to proceed ☝️')
