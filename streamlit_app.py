@@ -31,7 +31,7 @@ button_col1.button('Example input', on_click=insert_example_smiles)
 button_col2.button('Clear input', on_click=clear_smiles)
 
 if st.session_state.example_input == '':
-  st.info('Enter SMILES notation to proceed ☝️')
+  st.info('Enter SMILES notation to proceed ☝️', icon='ℹ️')
 else:
   st.info(smiles_txt)
 
