@@ -24,11 +24,10 @@ def insert_example_smiles():
 def clear_smiles():
     st.session_state.example_input = ''
 
-smiles_txt = st.text_input('Enter SMILES notation', st.session_state.example_input)
+smiles_txt = st.sidebar.text_input('Enter SMILES notation', st.session_state.example_input)
 
-button_col1, button_col2, button_col3 = st.columns((1,1,4))
-button_col1.button('Example input', on_click=insert_example_smiles)
-button_col2.button('Clear input', on_click=clear_smiles)
+st.sidebar.button('Example input', on_click=insert_example_smiles)
+st.sidebar.button('Clear input', on_click=clear_smiles)
 
 if st.session_state.example_input == '':
   st.info('Enter SMILES notation to proceed ☝️', icon='ℹ️')
@@ -53,6 +52,7 @@ if os.path.isfile('molecule.smi'):
                   log=True,
                   fingerprints=True)
 
+st.subheader('🔢 Descriptors')
 descriptors = pd.read_csv('descriptors.csv')
 descriptors.drop('Name', axis=1, inplace=True)
 st.write(descriptors)
