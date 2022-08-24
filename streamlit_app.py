@@ -49,6 +49,7 @@ if st.session_state.smiles_input != '':
   m = Chem.MolFromSmiles(smiles_txt)
   m2 = Chem.AddHs(m)
   AllChem.EmbedMolecule(m2,randomSeed=0xf00d)
+  AllChem.MMFFOptimizeMolecule(m2)
   m3 = Chem.MolToMolBlock(m2)
   st.code(m3)
 
