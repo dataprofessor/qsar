@@ -44,7 +44,7 @@ f.close()
 
 
 # Compute PADEL descriptors
-if st.session_state.smiles_input is not '':
+if st.session_state.smiles_input != '':
   st.subheader('🔢 Descriptors')
   if os.path.isfile('molecule.smi'):
     padeldescriptor(mol_dir='molecule.smi', 
