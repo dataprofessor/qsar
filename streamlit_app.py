@@ -24,7 +24,7 @@ button_col1, button_col2, button_col3, button_col4 = st.columns(4)
 button_col1.button('Insert example input', on_click=insert_example_smiles)
 button_col2.button('Clear input', on_click=clear_smiles)
 
-if st.session_state.example_input is None:
+if st.session_state.example_input == '':
   st.info('Enter SMILES notation to proceed ☝️')
 else:
   st.info(smiles_txt)
