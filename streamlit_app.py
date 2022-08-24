@@ -4,10 +4,12 @@ from padelpy import padeldescriptor
 
 st.title('💊 Bioactivity prediction app')
 
-df = pd.read_csv('data/hcv_ns5b_curated_data.csv')
-st.write(df)
+molecule = pd.read_csv('molecule.smi')
+ic50 = pd.read_csv('data/hcv_ns5b_ic50_nm.csv')
+st.write(molecule)
+st.write(ic50)
 
-#example_input = "CC(=O)OC1=CC=CC=C1C(=O)O"
+example_input = "CC(=O)OC1=CC=CC=C1C(=O)O"
 #st.write(example_input)
 
 smiles_txt = st.text_input('Enter SMILES notation', '')
