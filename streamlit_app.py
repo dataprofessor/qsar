@@ -98,8 +98,8 @@ if st.session_state.smiles_input != '':
   
  
 # Read in saved classification model
-if st.session_state.smiles_input != '':
-  model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
+# if st.session_state.smiles_input != '':
+  # model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
   # importances = model.feature_importances_
   # model_importances = pd.Series(importances, index=feature_names)
   # st.write(model_importances)
