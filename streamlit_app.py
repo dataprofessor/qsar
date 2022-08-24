@@ -58,7 +58,7 @@ if st.session_state.smiles_input != '':
     st.code(m3)
 
   with st.expander('Show molecular structure via stmol'):
-    col1,col2,col3 = st.columns((1,4,1))
+    col1,col2,col3 = st.columns((1,5,1))
     with col2:
       f2 = open('molecule.xyz', 'r')
       molecule_xyz = f2.read()
