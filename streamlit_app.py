@@ -53,7 +53,8 @@ if st.session_state.smiles_input != '':
   AllChem.EmbedMolecule(m2,randomSeed=0xf00d)
   AllChem.MMFFOptimizeMolecule(m2)
   m3 = Chem.MolToMolBlock(m2)
-  st.code(m3)
+  with st.expander('See Mol file'):
+    st.code(m3)
 
 #f = open(example_xyz,"r")
 #    example_xyz = f.read()
