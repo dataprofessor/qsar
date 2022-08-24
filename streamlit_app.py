@@ -42,6 +42,11 @@ f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\tmol_001')
 f.close()
 
+# Show molecule
+
+#f = open(example_xyz,"r")
+#    example_xyz = f.read()
+
 
 # Compute PADEL descriptors
 if st.session_state.smiles_input != '':
