@@ -56,9 +56,10 @@ if st.session_state.smiles_input != '':
     st.code(m3)
   Chem.MolToXYZFile(m2, 'molecule.xyz')
 
-f2 = open('molecule.xyz', 'r')
-molecule_xyz = f2.read()
-speck_plot(molecule_xyz, wbox_width='600px')
+  with st.expander('Show molecular structure via speck_plot'):
+    f2 = open('molecule.xyz', 'r')
+    molecule_xyz = f2.read()
+    speck_plot(molecule_xyz, wbox_width='600px')
 
 
 # Compute PADEL descriptors
