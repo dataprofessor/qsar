@@ -33,7 +33,7 @@ button_col2.button('Clear input', on_click=clear_smiles)
 if st.session_state.example_input == '':
   st.info('Enter SMILES notation to proceed ☝️', icon='ℹ️')
 else:
-  st.info(smiles_txt)
+  st.info(smiles_txt, icon='ℹ️')
 
 f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\tmol_001')
@@ -54,4 +54,5 @@ if os.path.isfile('molecule.smi'):
                   fingerprints=True)
 
 descriptors = pd.read_csv('descriptors.csv')
+descriptors.drop('Name', axis=1, inplace=True)
 st.write(descriptors)
