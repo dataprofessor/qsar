@@ -7,7 +7,7 @@ from stmol import speck_plot
 from padelpy import padeldescriptor
 
 st.set_page_config(
-  page_title='Bioactivity prediction app',
+  page_title='BioAct',
   page_icon='💊',
   layout='wide',
   initial_sidebar_state='collapsed')
@@ -18,8 +18,19 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.title('💊 Bioactivity prediction app')
+st.title('💊 BioAct')
 
+with st.expander('About this app'):
+  st.write('''
+    This Biological Activity (**BioAct**) prediction app allow users to easily evaluate the putative biological activity of a query molecule against the target protein being investigated.
+    
+    This app is based on the following Python libraries:
+    - `streamlit`
+    - `pandas`
+    - `rdkit`
+    - `stmol`
+    - `padelpy`
+    ''')
 
 # Input SMILES
 st.sidebar.subheader('Input SMILES')
