@@ -51,17 +51,17 @@ if st.session_state.smiles_input != '':
   m2 = Chem.AddHs(m)
   AllChem.EmbedMolecule(m2,randomSeed=0xf00d)
   AllChem.MMFFOptimizeMolecule(m2)
-  m3 = Chem.MolToMolBlock(m2)
+  m3 = Chem.MolToXYZBlock(m2)
   with st.expander('See Mol file'):
     st.code(m3)
 
-f2 = open('molecule.mol', 'w')
+f2 = open('molecule.xyz', 'w')
 st.write(f2)
 f2.close()
 
-f3 = open('molecule.mol', 'r')
-molecule_mol = f3.read()
-speck_plot(molecule_mol, wbox_height='500px', wbox_width='500px')
+f3 = open('molecule.xyz', 'r')
+molecule_xyz = f3.read()
+speck_plot(molecule_xyz, wbox_height='500px', wbox_width='500px')
 
 
 # Compute PADEL descriptors
